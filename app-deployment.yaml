@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ckp02
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ckp02
+  template:
+    metadata:
+      labels:
+        app: ckp02
+    spec:
+      containers:
+        - name: ckp02
+          image: vitor9909/cp2francis
+          ports:
+            - containerPort: 8080
